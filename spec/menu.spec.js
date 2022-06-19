@@ -21,4 +21,9 @@ describe('Menu class', () => {
     shown_menu = 'Prawn Toast: £4.50, Singapore Vermicelli: £7.00, Salt and Pepper Squid: £7.50'
     expect(menu.showMenu()).toEqual(shown_menu)
   })
+
+  it('tells us if a dish in not included in the menu', () => {
+    expect(menu.isContainingDish('Chicken Tikka Masala')).toEqual(false)
+    expect(menu.isContainingDish('Prawn Toast')).toEqual(true)
+  })
 })

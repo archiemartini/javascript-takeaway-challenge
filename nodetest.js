@@ -1,5 +1,6 @@
 const Takeaway = require('./takeaway')
 const Menu = require('./menu')
+const Order = require('./order')
 
 let dishes = {
   'Prawn Toast': 4.50,
@@ -7,6 +8,7 @@ let dishes = {
   'Salt and Pepper Squid': 7.50
 }
 
-menu = new Menu(dishes)
 
-takeaway = new Takeaway(menu)
+menu = new Menu(dishes)
+order = new Order(menu)
+takeaway = new Takeaway(menu, order)

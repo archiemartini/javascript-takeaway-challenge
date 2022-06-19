@@ -7,7 +7,11 @@ class Menu {
   showMenu() {
    return Object.keys(this.dishes).map((key) => {
     return `${key}: £${this.dishes[key].toFixed(2)}`
-   }).join(", ")
+   }).join(", ");
+  }
+
+  isContainingDish(dish) {
+    return this.dishes.hasOwnProperty(dish)
   }
 }
 
