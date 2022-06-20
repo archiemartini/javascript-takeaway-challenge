@@ -1,10 +1,13 @@
+const Order = require('./order')
+const Sms = require('./sms')
 
 class Takeaway {
 
 
-  constructor(menu, order) {
+  constructor(menu, order, sms) {
     this.menu = menu
-    this.order = order
+    this.order = order || new Order(menu)
+    this.sms = sms || new Sms()
 
   }
 
@@ -16,6 +19,9 @@ class Takeaway {
     for (let dish in dishes) {
       this.order.addDish(dish, dishes[dish])
     }
+    let orderConfirmation = `The total of this order came to £${this.order.total().toFixed(2)}`
+    this.sms.sendText(orderConfirmation)
+    return orderConfirmation;
   }
 }
 

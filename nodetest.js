@@ -1,6 +1,7 @@
 const Takeaway = require('./takeaway')
 const Menu = require('./menu')
 const Order = require('./order')
+const Sms = require('./sms')
 
 let dishes = {
   'Prawn Toast': 4.50,
@@ -11,4 +12,8 @@ let dishes = {
 
 menu = new Menu(dishes)
 order = new Order(menu)
-takeaway = new Takeaway(menu, order)
+sms = new Sms()
+takeaway = new Takeaway(menu, order, sms)
+
+order.addDish('Prawn Toast', 3)
+takeaway.placeOrder()

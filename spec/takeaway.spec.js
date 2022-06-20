@@ -25,7 +25,7 @@ describe('Takeaway class', () => {
     expect(takeaway.printMenu()).toEqual("Prawn Toast: £4.50, Singapore Vermicelli: £7.00, Salt and Pepper Squid: £7.50")
   })
 
-  // it('is capable of ordering a number of dishes from menu', () => {
-  //   expect(takeaway.placeOrder(dishes)).toEqual("Your order is for £23.50")
-  // })
+  it('is capable of ordering a number of dishes from menu', () => {
+    expect(takeaway.placeOrder(dishes)).toEqual("The total of your order came to £23.50")
+  })
 })
