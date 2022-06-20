@@ -13,7 +13,7 @@ class Takeaway {
   }
 
   placeOrder(dishes) {
-    for (const dish in dishes) {
+    for (let dish in dishes) {
       this.order.addDish(dish, dishes[dish])
     }
   }

@@ -11,6 +11,19 @@ class Order {
     }
     this.dishes[dish] = quantity
   }
+
+  total() {
+    return this.itemPrices().reduce( (x,y) => x+y, 0)
+  }
+  
+  itemPrices() {
+    let item_prices = []
+    for (let dish in this.dishes) {
+      item_prices.push(this.menu.price(dish) * this.dishes[dish])
+    }
+    return item_prices
+  }
 }
+
 
 module.exports = Order;

@@ -26,4 +26,8 @@ describe('Menu class', () => {
     expect(menu.isContainingDish('Chicken Tikka Masala')).toEqual(false)
     expect(menu.isContainingDish('Prawn Toast')).toEqual(true)
   })
+
+  it('returns a price given a dish', () => {
+    expect(menu.price('Prawn Toast')).toEqual(4.50)
+  })
 })

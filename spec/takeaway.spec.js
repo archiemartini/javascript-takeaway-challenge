@@ -1,27 +1,28 @@
 const Takeaway = require('../takeaway')
 const Menu = require('../menu')
+const Order = require('../order')
 
-jest.mock('../menu.js')
-jest.mock('../order.js')
 
 describe('Takeaway class', () => {
 
-  const mockedMenu = {
-    showMenu: () => "Prawn Toast: £4.50"
+  let food_menu = {
+    'Prawn Toast': 4.50,
+    'Singapore Vermicelli': 7.00,
+    'Salt and Pepper Squid': 7.50
   }
-
-  order = jest.fn()
+  let menu = new Menu(food_menu)
+  let order = new Order(menu)
   
   let dishes = { 'Prawn Toast': 2, 'Singapore Vermicelli': 1, 'Salt and Pepper Squid': 1}
 
 
   let takeaway;
   beforeEach(function () {
-    takeaway = new Takeaway(mockedMenu, order)
+    takeaway = new Takeaway(menu, order)
   });
 
   it('shows the menu with the dishes and prices', () => {
-    expect(takeaway.printMenu()).toEqual("Prawn Toast: £4.50")
+    expect(takeaway.printMenu()).toEqual("Prawn Toast: £4.50, Singapore Vermicelli: £7.00, Salt and Pepper Squid: £7.50")
   })
 
   // it('is capable of ordering a number of dishes from menu', () => {

@@ -31,4 +31,11 @@ describe('Order class', () => {
   it('doesn\'t allow items that are not on the menu to be added', () => {
     expect(() => {order.addDish('Chicken Tikka Masala', 1)}).toThrowError('You must provide a dish on the menu')
   })
+
+  it('calculates the total for the order', () => {
+    order.addDish('Prawn Toast', 2)
+    order.addDish('Singapore Vermicelli', 1)
+    total = 15.00
+    expect(order.total()).toEqual(16.00)
+  })
 })

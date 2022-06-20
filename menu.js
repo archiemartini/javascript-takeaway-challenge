@@ -13,6 +13,10 @@ class Menu {
   isContainingDish(dish) {
     return this.dishes.hasOwnProperty(dish)
   }
+
+  price(dish) {
+    return this.dishes[dish]
+  }
 }
 
 module.exports = Menu
