@@ -1,3 +1,4 @@
 node_modules
 smsAuth.js
 smsAuth.env
+.env

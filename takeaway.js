@@ -10,7 +10,6 @@ class Takeaway {
     this.sms = sms || new Sms()
 
   }
-
   printMenu() {
     return this.menu.showMenu()
   }
